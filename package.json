@@ -1,0 +1,25 @@
+{
+    "name": "oba-lang-syntax",
+    "displayName": "oba-lang-syntax",
+    "description": "Oba language syntax highlight",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.50.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "oba",
+            "aliases": ["Oba", "oba"],
+            "extensions": [".oba"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "oba",
+            "scopeName": "source.oba",
+            "path": "./syntaxes/oba.tmLanguage.json"
+        }]
+    }
+}

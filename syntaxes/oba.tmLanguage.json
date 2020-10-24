@@ -1,0 +1,50 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "Oba",
+    "scopeName": "source.oba",
+    "patterns": [{ "include": "#expression" }],
+    "repository": {
+        "expression": {
+            "patterns": [
+                {"include": "#comment"},
+                {"include": "#reserved"},
+                {"include": "#numeric"},
+                {"include": "#operators"},
+                {"include": "#variable"},
+                {"include": "#region"}
+            ]
+        },
+        "numeric": {
+            "match": "\\d+",
+            "name": "constant.numeric"
+        },
+        "reserved": {
+            "match": "debug|else|false|fn|if|let|match|true|while|import",
+            "name": "keyword.reserved"
+        },
+        "variable": {
+            "match": "[a-zA-Z_][a-zA-Z0-9_]*",
+            "name": "entity.name"
+        },
+        "operators": {
+            "match": "[+-/*=]",
+            "name": "keyword.operator"
+        },
+        "comment": {
+            "match": "//.*",
+            "name": "comment.line"
+        },
+        "region": {
+            "begin": "{",
+            "end": "}",
+            "beginCaptures": {
+                "0": { "name": "region.open" }
+            },
+            "endCaptures": {
+                "0": { "name": "region.close" }
+            },
+            "name": "region.group",
+            "patterns": [{ "include": "#expression" }]
+        }
+    }
+}
