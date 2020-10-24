@@ -11,8 +11,13 @@
                 {"include": "#numeric"},
                 {"include": "#operators"},
                 {"include": "#variable"},
+                {"include": "#string"},
                 {"include": "#region"}
             ]
+        },
+        "string": {
+            "match": "\"[^\"]*\"",
+            "name": "string"
         },
         "numeric": {
             "match": "\\d+",
